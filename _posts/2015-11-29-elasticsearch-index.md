@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: Elasticsearch Index - Part 2
+title: Index Oluşturmak - Part 2
 categories:
 - blog
 ---
