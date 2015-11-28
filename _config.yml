@@ -1,5 +1,6 @@
 # General Jekyll Config
 highlighter: pygments
+markdown: redcarpet
 url: http://elasticsearch.kulekci.net
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
