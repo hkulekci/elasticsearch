@@ -1,0 +1,33 @@
+# Theme customization - please change from the defaults!
+
+# Color for top bar, links, etc
+highlight_color: '#70BA56'
+
+# Profile links on the left sidebar, leave blank to ignore
+social:
+  github: hkulekci
+  #bitbucket: philipj
+  #hacker_news: kulekci
+  #stackexchange: 348619
+  stackoverflow: 721600
+  twitter: kulekci
+  #facebook: zuck
+  #tumblr: animalygifs
+  linkedin: hkulekci
+  #gplus: 110552447039675960964
+  gravatar: 558ac677a2edcbd80cf98aac51b0b833
+  #flickr: johndoe
+
+# "Hi, I'm _______"
+name: Haydar KULEKCI
+email: haydarkulekci@gmail.com
+tagline: "weak opinions, strongly held"
+
+# Google Analytics key, leave blank to ignore
+google_analytics_key: UA-23748121-1
+
+# Toggle "Postings are my own" disclaimer in footer
+show_disclaimer: true
+
+# Toggle link/icon to view atom feed (/atom.xml) in sidebar
+show_atom_feed: true

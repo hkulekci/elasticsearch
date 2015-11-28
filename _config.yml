@@ -1,0 +1,5 @@
+# General Jekyll Config
+highlighter: pygments
+url: http://elasticsearch.kulekci.net
+lsi: false
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
