@@ -14,17 +14,17 @@ Elasticsearch (ES kısaltması ile devam edeceğim) hakkında bilgi vermeye
 bahsedildiği üzere [Lucene](https://lucene.apache.org/core/) tabanlı bir arama 
 sunucusudur. Genel bilinmesi gerekenler:
 
- - Full-text arama yaoabilmenizi sağlar
+ - Full-text arama yapabilmenizi sağlar
  - Java ile geliştirilmiştir.
  - Apache Lisansı ile yayınlanmıştır.
  - Apache Solr'dan sonra gelen ikinci en populer arama motorudur. 
     [1](http://db-engines.com/en/ranking/search+engine)
 
-Elastic search kurulumu ve çalıştırılması hakkında 
+Elasticsearch kurulumu ve çalıştırılması hakkında 
 [buradan](https://www.elastic.co/downloads/elasticsearch) bilgi alabilirsiniz. 
-Ben genel olarak kurulumdan bahsetmeyeyeceğim. Elimden geldiğince ES'i daha 
+Ben genel olarak kurulumdan bahsetmeyeceğim. Elimden geldiğince ES'i daha 
 hızlı nasıl öğrenirsiniz ve çalışma ortamınızı nasıl hızlıca kurabilirsiniz
-bundan bahsedeğim.
+bundan bahsedeceğim.
 
 Elasticsearch'de verilerin tutulduğu [index](https://www.elastic.co/blog/what-is-an-elasticsearch-index)'ler 
 vardır. Bunları ilişkili bir veritabanındaki `database`ler gibi düşünebilirsiniz. 
@@ -37,7 +37,7 @@ MySQL => Databases => Tables => Columns/Rows
 Elasticsearch => Indices => Types => Documents with Properties
 ```
 
-Şimdi ES'i kurulumunu [şu](https://www.elastic.co/downloads/elasticsearch) adresteki 
+Şimdi ES'i [şu](https://www.elastic.co/downloads/elasticsearch) adresteki 
 açıklamalar ışığında kuralım ve çalıştıralım. Burada ES'in default ayarlarını 
 kullanabilirsiniz. Normalde production sunucusuna kurulum yapmıyorsanız default 
 ayarlarda kullanmanız bir sakınca yaratmaz. İlerleyen yazılarımızda ES'i daha verimli
@@ -47,7 +47,7 @@ ayarlamaları konfigürasyonları nelerdir bunlardan bahsedeceğiz. Şimdi, ilk 
 kuracağız. 
 
 Eklentilerden başlayacak olursak, [head](https://github.com/mobz/elasticsearch-head) 
-eklentisi elasticsearch'ün API arayüzüne rahatça kullanabilmenizi sağlar. Bu 
+eklentisi Elasticsearch'ün API arayüzüne rahatça kullanabilmenizi sağlar. Bu 
 eklenti ile index'leri type'ları rahatça görebilirsiniz. MySQL'in PhpMyAdmin'i
 ile aynı görevi görüyor diyebiliriz. Bu eklenti ile index'lerinizi rahatça 
 yönetebilirsiniz. 
@@ -55,18 +55,18 @@ yönetebilirsiniz.
 İkinci eklentimiz olan [inquisitor](https://github.com/polyfractal/elasticsearch-inquisitor)
 eklentisi ile sorgularınızı debug edebilir ve anlamaya çalışabilirsiniz. Bu 
 eklenti ile oluşturmuş olduğunuz analyzer'larınızı kolayca debug edebilirsiniz
-ve nasıl çalıştığını görebilirsiniz. Burada doğan olarak analyzer ne sorusu 
+ve nasıl çalıştığını görebilirsiniz. Burada doğal olarak analyzer ne sorusu 
 geliyordur aklınıza. [Analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/1.4/analysis-analyzers.html)'lar 
 [Tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/1.4/analysis-tokenizers.html) 
 ve [TokenFilter](https://www.elastic.co/guide/en/elasticsearch/reference/1.4/analysis-tokenfilters.html)'lardan 
-oluşurlar. Tokenizer kavramını kısaca anlatacak olursak verilen bir string'i daha 
+oluşurlar. Tokenizer kavramını kısaca anlatacak olursak, verilen bir string'i daha 
 küçük parçalara ayırma işlemini yaparlar. TokenFilter'lar ise bu parçaları bir 
 filtreden geçirirler. Böylelikle Analyzer'lar ile ES'de tuttuğunuz verileriniz 
 bir takım işlemlerden geçirerek arama yapılabilir bir halde hazırda bekletiyor 
 olacaksınız. Bu konuya daha ilerde ayrı bir yazıda bahsetmeyi düşünüyorum. Şimdilik 
 böyle bir şeyin olduğunu ve ileride kullanacağınızı bilmeniz yeterli.
 
-Bunlar dışında bir çok eklenti mevcut. Hepsinden bahsedemeyeceğim ama zaman 
+Bunlar dışında bir çok eklenti mevcut. Hepsinden bahsedemeyeceğim ama zamanı 
 geldikçe eklentiler hakkında kısaca bilgi vermeye çalışacağım. 
 
 Şimdi development ortamımızı şenlendirecek Chrome Eklentimize. 
