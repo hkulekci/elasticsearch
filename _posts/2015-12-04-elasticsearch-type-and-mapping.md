@@ -14,11 +14,13 @@ Veritabanı şeması gibi düşünün. Verilerinizin hangi alanlardan oluştuğu
 alanların tiplerinin ve özelliklerinin neler olduğunu belirtirler. Hangi alanların `index`e 
 alınacağı ya da hangi alanların Lucene'de tutulacağını belirler. 
 
-### Lucene Dökümanları Nasıl Görür
+Elasticsearch daha önceden belirttiğimiz üzere Lucene tabanlıdır. Peki Lucene 
+Elasticsearch üzerinden gönderdiğimiz dökümanları nasıl görür ve nasıl saklar. 
 
-Lucene'de bir döküman basit `field-value` (`alan-değer`) çiftlerini içerir. Bir alanın en az bir 
-değeri ya da birden fazla değeri olmalıdır. Aynı şekilde, tek bir `string` değer analiz 
-işlemleri sonunda birden fazla değere dönüşebilir. Bunu örneklemek gerekirse 
+Lucene'de bir döküman basit `field-value` (`alan-değer`) çiftlerini içerir. Bir alanın en az 
+bir değeri ya da birden fazla değeri olmalıdır. Bazen, tek bir `string` değer analiz 
+işlemleri sonunda birden fazla değere dönüşebilir. Bazen de uzun bir `string`  değeri
+analizler sonucunda kısa bir string değerine dönüşebilir. Bunu örneklemek gerekirse 
 
 ```
 {
@@ -26,7 +28,7 @@ işlemleri sonunda birden fazla değere dönüşebilir. Bunu örneklemek gerekir
 }
 ``` 
 
-değeri analizler sonunda 
+değeri bazı analizler sonunda aşağıdak gibi  
 
 ```
 {
@@ -37,15 +39,16 @@ değeri analizler sonunda
 }
 ```
 
-şekline dönüşmüş olabilir. Lucene değerin `string` ya da sayı ya da tarih formatında olmasını 
+bir hal almış olabilir. Lucene değerin `string` ya da sayı ya da tarih formatında olmasını 
 önemsemez. Tüm değerler `opaque bytes` olarak kabul edilir. 
 
 Lucene'de biz bir dökümanı `index`lediğimizde her bir alan (field) için değerler (values) ilgili 
 alan için `inverted index`e eklenir. İsteğe bağlı olarak, orjinal değerler sonradan ulaşılabilir 
 olması için değişmeden de saklanabilir. 
 
-Burada eğer `Lucene`de bütün veriler field-value tutulurken Elasticsearch'deki `type` kavramı
-nasıl uygulanır diye düşünebilirsiniz. `Type`ların Lucene tarafında direk olarak bir karşılığı 
+Lucene'de şimdiye kadar her seferinde `field-value` tutulur diye konuştuk ve `type`dan hiç 
+bahsetmedik. Peki, `Lucene`de bütün veriler `field-value` tutulurken Elasticsearch'deki 
+`type` kavramı nasıl uygulanır? `Type`ların Lucene tarafında direk olarak bir karşılığı 
 yoktur. Elasticsearch tarafında ise bir `index`te birden fazla `type` ve bunların her birinin 
 kendi yapıları (mapping) vardır. Lucene tarafında bu veriler her bir dokümanın 
 `meta data`sında `_type` diye bir alanında tutulur. Biz özel bir type'a göre bir arama 
