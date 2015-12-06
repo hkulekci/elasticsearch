@@ -3,6 +3,9 @@ layout: post
 title: Elasticsearch ve Geliştirme Araçları - Part 1
 categories:
 - blog
+summary: Elasticsearch nedir? Nasıl hızlıca nasıl giriş yapabilirsiniz? 
+Plugin nedir? Başlangıç için hangi plugin'leri kullanabilirsiniz? Geliştirme 
+ortamı için neler gerekli?
 ---
 
 Elasticsearch'e yeni başlayanlar için hızlı ve rahat bir başlangıç yapmalarını 

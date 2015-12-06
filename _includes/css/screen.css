@@ -91,6 +91,11 @@ ul.posts span {
   font-size:14px;
 }
 
+ul.posts li p.summary {
+    font-size: 13px;
+    margin-left: 114px;
+}
+
 .meta {
   color: #aaa;
   margin: 0 0 10px 0;
