@@ -164,6 +164,7 @@
         .container .offset-by-thirteen,
         .container .offset-by-fourteen,
         .container .offset-by-fifteen { padding-left: 0; }
+        ul.posts li p.summary { margin-left: auto; }
 
     }
 
@@ -195,6 +196,7 @@
         .container .sixteen.columns,
         .container .one-third.column,
         .container .two-thirds.column { width: 420px; }
+        ul.posts li p.summary { margin-left: auto; }
     }
 
 
