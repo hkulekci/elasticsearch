@@ -3,6 +3,7 @@ layout: post
 title: Mapping Nedir?
 categories:
 - blog
+summary: Mapping nedir? Nasıl oluşturulur? Nasıl değiştirilir? Nasıl çalışır?
 ---
 
 Bir önceki yazımda daha çok `Type` kavramından bahsetmiştim. `Mapping` hakkında da 

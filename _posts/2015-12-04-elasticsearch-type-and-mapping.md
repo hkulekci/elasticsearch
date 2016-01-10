@@ -3,6 +3,7 @@ layout: post
 title: Elasticsearch Type ve Mapping
 categories:
 - blog
+summary: Elasticsearch'de `type`ın ne olduğunu ve nasıl oluşturabilsiniz? `Type`ı ne için kullanabilirsiniz? `Type Mapping` nedir ve ne için kullanılır?
 ---
 
 Elasticsearch'te `type` benzer dökümanlar sınıfıdır. Örneğin `users` adında bir index'iniz

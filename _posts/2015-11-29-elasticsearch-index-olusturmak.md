@@ -3,6 +3,7 @@ layout: post
 title: Elasticsearch Index Oluşturmak
 categories:
 - blog
+summary: Elasticsearch'de index nedir ve nasıl oluşturulur? Index `settings` nedir ve nasıl kullanılır? `Analyzer` nedir, nasıl oluşturulur.
 ---
 
 Elasticsearch arama motoru hakkında bir önceki yazımda kullanabileceğiniz 
