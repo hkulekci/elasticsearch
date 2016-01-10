@@ -60,7 +60,7 @@ olarak kullanılabilecek. (Daha fazla bilgi için [`Query DSL`](https://www.elas
 
 
 | Silinen Filter'lar        | Kullanılabilecek Query Hali |
-| -------------             |-------------                |
+| ------------------------- | --------------------------- |
 | And                       | [And Query](https://www.elastic.co/guide/en/elasticsearch/reference/2.x/query-dsl-and-query.html)                             |
 | Or                        | [Or Query](https://www.elastic.co/guide/en/elasticsearch/reference/2.x/query-dsl-or-query.html)                               |
 | Not                       | [Not Query](https://www.elastic.co/guide/en/elasticsearch/reference/2.x/query-dsl-not-query.html)                             |
@@ -107,7 +107,7 @@ değişmiştir. `Aggregation`lar `facet`ların üst kümesidir.
 Aşağıda genel bir liste oluşturmaya çalıştım:
 
 | Silinen `Facet`lar        | `Aggregation`lar          |
-| -------------             |-------------              |
+| ------------------------- | ------------------------- |
 | Filter veya Query Facet   | [filter aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/2.x/search-aggregations-bucket-filter-aggregation.html) <br> [filters aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/2.x/search-aggregations-bucket-filters-aggregation.html) |
 | Geo Distance Facet        | [geo_distance aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/2.x/search-aggregations-bucket-geodistance-aggregation.html) |
 | Histogram Facet           | [histogram aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/2.x/search-aggregations-bucket-histogram-aggregation.html) |
