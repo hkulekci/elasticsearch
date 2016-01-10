@@ -332,4 +332,14 @@
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
 
+table tr th {
+	font-weight: bold;
+}
 
+table tr td, table tr th {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+table tr {
+    border: 1px solid #ccc;
+}
