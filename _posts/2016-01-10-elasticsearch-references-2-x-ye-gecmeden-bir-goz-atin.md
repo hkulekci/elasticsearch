@@ -126,3 +126,9 @@ Aşağıda genel bir liste oluşturmaya çalıştım:
 
 ### `Nested tipi
 The docs for the nested field datatype have moved to Nested datatype.
+
+
+#### Kaynakça
+
+ - [Breaking changes in 2.0](https://www.elastic.co/guide/en/elasticsearch/reference/current/breaking-changes-2.0.html)
+ - [WHAT'S NEW IN ELASTICSEARCH 2.0](http://david.pilato.fr/presentations/what-s-new-in-elasticsearch-20.html)
