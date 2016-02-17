@@ -136,3 +136,8 @@ Yukarıdaki örnekte göreceğiniz `post` type'ındaki `user_id` alanında `inde
 hiç yazılmaz ise `standart analyzer` ile analiz edilerek index'e alınır. Buraya kendi 
 oluşturduğunuz `analyzer`ları ya da varsayılanları kullanabilirsiniz. 
 
+#### Kaynakça
+ 
+ - [Elasticsearch - Mapping](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html)
+ - [Elasticsearch - Mapping Intro](https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping-intro.html)
+ - [Types and Mappings](https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping.html)
