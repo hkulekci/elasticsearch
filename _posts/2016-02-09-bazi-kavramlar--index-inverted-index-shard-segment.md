@@ -64,3 +64,8 @@ olduğu sürece tekrar eder.
 `Segment`ler değişmezdir. Bir döküman update edildiğinde, eski döküman silindi olarak 
 işaretlenir, ve yeni bir döküman eklenir. Birleştirme işlemleri aynı zamanda silinen 
 dökümanlarıda çıkarır.
+
+#### Kaynakça 
+
+ - [Basics about segments in elasticsearch](http://stackoverflow.com/a/15429578/721600)
+ - [Basic Concepts](https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html)
