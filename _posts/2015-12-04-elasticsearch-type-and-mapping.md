@@ -108,3 +108,8 @@ ayrı index'ler olarak ayırmak daha mantıklı olacaktır. Ya da name alanları
 `company_name` olarak değiştirmekte bir çözüm olacaktır. Böylelikle filtreleme yaparken 
 bu alanlarda karışıklık olmayacaktır. 
 
+#### Kaynakça 
+
+ - [Elasticsearch - Mapping](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html)
+ - [Elasticsearch - Mapping Intro](https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping-intro.html)
+ - [Types and Mappings](https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping.html)
