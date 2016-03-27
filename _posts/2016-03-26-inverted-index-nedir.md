@@ -3,10 +3,8 @@ layout: post
 title: Inverted Index Nedir?
 categories:
 - blog
-summary: Terim bazlı aramalarınızın nasıl çalıştığını ve nasıl daha hızlı çalıştığına bir gözün atın.  
+summary: Inverted Index ne demektir ve terim bazlı aramalarınızın nasıl çalıştığını ve nasıl daha hızlı çalıştığına bir gözün atın. 
 ---
-
-
 
 Text tabanlı bir döküman kümeniz olduğunu düşünün. Bu dökümanlar içerisindeki terimlerinizi
 bu terimlerin hangi dökümanlar ile ilişkili olduğunu dökümanın bilgisini bir yerde 
