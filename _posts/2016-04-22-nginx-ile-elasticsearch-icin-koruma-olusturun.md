@@ -3,9 +3,7 @@ layout: post
 title: Nginx ile Elasticsearch için Koruma Oluşturun
 categories:
 - blog
-summary: Nginx ile elasticsearch sorgularını şifre koruması altında yapabilirsiniz 
-ve nginx logları ile elasticsearch sunucularınıza gelen yükü görebilir ve hatalarınızı 
-ayıklayabilirsiniz. 
+summary: Nginx ile elasticsearch sorgularını şifre koruması altında yapabilirsiniz ve nginx logları ile elasticsearch sunucularınıza gelen yükü görebilir ve hatalarınızı ayıklayabilirsiniz. 
 ---
 
 Elasticsearch HTTP API arayüzü üzerinden çalıştığı için bir sunucu üzerinde çalıştırdığınızda 
