@@ -72,7 +72,7 @@ otomatik yapacaktır.
       "mappings": {
           "user": {
             "properties": {
-               "test": {
+               "name": {
                   "type": "string"
                }
             }
