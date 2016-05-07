@@ -67,7 +67,7 @@ yapmanız gerekmektedir. Ya da burada server_name olarak bir IP adresi kullanabi
         auth_basic_user_file /usr/local/etc/nginx/.htpasswd;
 ```
 
-Bu kısımda da sayfamıza bir koruma ekledik ve Nginx'e ` /usr/local/etc/nginx/.htpasswd` bu 
+Bu kısımda da sayfamıza bir koruma ekledik ve Nginx'e `/usr/local/etc/nginx/.htpasswd` bu 
 dosyada yazan bilgilere göre bu alana gelen istekleri koru dedik. Bu dosyada da aşağıdaki 
 gibi Nginx'in anlayacağı dilde şifremizi oluşturduk. Kaynaklar arasında benim online da test 
 için kullandığım bir şifre oluşturma sitesi vardı. Ancak tabiki dışarıdaki bir aracı şifre oluşturmak
