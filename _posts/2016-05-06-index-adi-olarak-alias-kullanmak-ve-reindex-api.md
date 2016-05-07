@@ -12,7 +12,7 @@ takma isimler verebilirsiniz. Bunun önemini bir örnek üzerinden açıklamaya 
 
 Bir kullanıcıların verilerini tuttuğunuz `index`iniz var ve yapısı aşağıdaki gibi:
 
-```
+```json
 GET users/user/_mapping
 {
    "users": {
@@ -39,7 +39,7 @@ GET users/user/_mapping
 Bir takım verileriniz birikti ve sonradan farkettiniz ki `id` alanını integer yerine string olarak
 kaydetmişsiniz. Hemen değiştirmek için bir mapping update sorgusu hazırladınız:
 
-```
+```json
 PUT users/user/_mapping
 {
    "properties": {
@@ -53,7 +53,7 @@ PUT users/user/_mapping
 Ancak hali hazırda olan bir alanın veri tipini değiştirmeye çalıştığınızda Elasticsearch 
 bundan pek hoşlanmayacaktır ve aşağıdaki gibi bir hata verecektir:
 
-```
+```json
 {
    "error": {
       "root_cause": [
@@ -76,7 +76,7 @@ açıklayalım.
 
 İlk olarak yeni bir index oluşturup yeni yapımız ile `type`ı oluşturuyoruz. 
 
-```
+```json
 POST users_20160506
 
 POST users_20160506/user/_mapping
@@ -99,7 +99,7 @@ POST users_20160506/user/_mapping
 Daha sonrasında verilerimizi yeni index'imize taşıyoruz. Bunun için Elasticsearch 2.3.1 ile gelen
 yeni özelliği `_reindex` API arayüzü kullanabilirsiniz.
 
-```
+```json
 POST /_reindex
 {
   "source": {
@@ -114,7 +114,7 @@ Buradaki örneğimizde tabiki `id` alanımız integer tipine rahatça çevrilebi
 için rahatça bunu yapabildik. Burada eğer bir alan üzerinde ekstra işlem yaparak taşımak isteseydik 
 nasıl olacaktı. Bunun için de script kullanabilirsiniz: 
 
-```
+```json
 POST /_reindex
 {
   "source": {
@@ -138,7 +138,7 @@ diyecektir. Şimdi bizim adımlarımızı şöyle yapalım. Verilerimizi yeni in
 göre eski index'imize ihtiyaç kalmadı. Bunun için o index'i silelim ve yeni oluşturduğumuz 
 index'e `users` takma adını verelim.
 
-```
+```json
 DELETE users
 
 POST _aliases
@@ -152,7 +152,7 @@ POST _aliases
 Bu işlemleri tamamladıktan sonra halen `/users/user/_search` sorgusu yaptığınızda verilerinizi
 görebilirsiniz. 
 
-```
+```json
 {
    "took": 9,
    "timed_out": false,
@@ -191,7 +191,7 @@ anlatmaya çalışayım. Gün geldi bu yazımızda oluşturduğumuz `users_20160
 yine değiştirmeniz ve taşımanız gerekti. Verileriniz `users_20160720` index'ine taşıdınız ve 
 şimdi `users` takma adınızı taşımak istiyorsunuz. İşiniz gayet basit: 
 
-```
+```json
 POST /_aliases
 {
     "actions" : [

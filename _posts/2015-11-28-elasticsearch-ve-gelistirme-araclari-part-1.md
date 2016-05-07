@@ -76,7 +76,7 @@ eklentisi ile ES sorgularını hızlı ve rahat bir şekilde çalıştırabilirs
 Aşağıda bir dizi komut yazacağım ve Sense eklentisi ile hızlıca deneyebileceksiniz.
 Sense ile sorgu çalıştırmak için aşağıdaki formatta bir sorgu yapmamız gerekiyor.
 
-```
+```json
 METHOD /es/paths
 {
     "JSON" : "DATA"
@@ -100,7 +100,7 @@ POST /test-index
 
 Yeni bir döküman oluşturmak.
 
-```
+```json
 POST /test-index/test/1
 {
     "id": 1,
@@ -110,7 +110,7 @@ POST /test-index/test/1
 
 Yeni bir döküman oluşturmak
 
-```
+```json
 POST /test-index/test/2
 {
     "id": 1,
@@ -132,7 +132,7 @@ GET /test-index/test/1
 
 Arama yapmak:
 
-```
+```json
 GET /test-index/test/_search
 {
     "query": {

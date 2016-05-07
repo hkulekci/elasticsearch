@@ -16,7 +16,7 @@ Elasticsearch'ün en güzel özelliklerinden birisi hızlıca verilerini oluştu
 erişebilmenizi sağlar. Bir dökümanı index'lemek için bir index oluşturmanıza ya da bir 
 `mapping type` belirlemenize, alanlarınızı tanımlamanıza gerek yoktur. 
 
-```
+```json
 PUT core_index/user/1
 {
 	"name": "Haydar KULEKCI",
@@ -28,7 +28,7 @@ ES otomatik olarak anlayacaktır ve bir index bir `type` ve alanlarınız otomat
 tiplerinize göre oluşturacaktır. Yukarıdaki sorguyu çalıştırdığınızda aşağıdaki gibi bir 
 mapping otomatik olarak oluşacaktır.
 
-```
+```json
 {
    "core_index": {
       "mappings": {
@@ -62,7 +62,7 @@ Daha iyi anlamak için bir örnek belirleyelim ve bunun üzerinden devam edelim.
 aynı index içerisinde iki `type` tanımlayalım ve bunların `mapping` bilgilerini yani index'te 
 verilerin nasıl tutulacağını biz belirleyelim.
 
-```
+```json
 POST core_index 
 {
   "index": {

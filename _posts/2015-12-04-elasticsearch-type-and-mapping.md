@@ -23,7 +23,7 @@ bir değeri ya da birden fazla değeri olmalıdır. Bazen, tek bir `string` değ
 işlemleri sonunda birden fazla değere dönüşebilir. Bazen de uzun bir `string`  değeri
 analizler sonucunda kısa bir string değerine dönüşebilir. Bunu örneklemek gerekirse 
 
-```
+```json
 {
     "title": "Örnek bir başlık"
 }
@@ -31,7 +31,7 @@ analizler sonucunda kısa bir string değerine dönüşebilir. Bunu örneklemek 
 
 değeri bazı analizler sonunda aşağıdak gibi  
 
-```
+```json
 {
     "title": {
         "original": "Örnek bir başlık",
@@ -71,7 +71,7 @@ için bu tür verileri farklı alan isimleri ile ya da farklı indexlerde tanım
 Örneğin, kullanıcı ve şirket bilgileri tuttuğunuz bir Elasticsearch node'unuz olsun. Burada 
 bilgileri bir index altında `type`lar ile tutabilirsiniz. 
 
-```
+```json
 POST /core/user/_mapping
 {
     "properties": {

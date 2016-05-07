@@ -100,7 +100,7 @@ Artık Elasticsearch'e `elastic.local` adresi üzerinden erişebileceksiniz. İl
 Gördüğünüz gibi elasticsearch erişimini kısıtladık, ve erişmeye çalıştığımızda bize kullanıcı adı ve 
 şifre soruyor. Şimdi elasticsearch için oluşturduğumuz şifre ile erişmeye çalışalım. 
 
-```
+```json
 ➜  ~ curl --user hkulekci:123456  -XGET "http://elastic.local"
 {
   "name" : "Black Jack Tarr",

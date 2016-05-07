@@ -28,7 +28,7 @@ Bu yöntem 1. yöntem olsun. Index oluşturmak için çeşitli yollar vardır.
 Örneğin siz veri oluşturmak için aşağıdaki sorguyu çalıştırdığınızda da bir
  `users` index'i oluşacaktır. 
 
-```
+```json
 POST /users/user/1
 {
     "name":"Haydar"
@@ -39,7 +39,7 @@ Bu yönteme de 2. yöntem diyelim. Bu yöntem ile index oluşturulduğunda
 aynı zamanda bir kullanıcı da oluşacaktır ve sonuç olarak aşağıdaki gibi bir 
 cevap dönecektir. 
 
-```
+```json
 {
    "_index": "users",
    "_type": "user",
@@ -65,7 +65,7 @@ mapping'i (yani veriyi tutma şeklinide) otomatik oluşturmuş oluyoruz. Mapping
 mapping verinin yapısını belirler. Eğer biz bunu kendimiz belirlemez ise ES 
 otomatik yapacaktır. 
 
-```
+```json
 {
    "index-name": {
       "aliases": {},
@@ -122,7 +122,7 @@ Genel olarak index'lerin yapısını inceledik. Şimdi farklı şekillerde index
 oluşturarak daha iyi pekiştirmeye çalışalım. Örneğin aşağıda 2 shard ve 
 2 replica ile bir index oluşturalım. 
 
-```
+```json
 POST /index-name
 {
     "settings": {
