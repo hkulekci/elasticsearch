@@ -6,17 +6,17 @@ categories:
 summary: Elasticsearch'de `type`ın ne olduğunu ve nasıl oluşturabilsiniz? `Type`ı ne için kullanabilirsiniz? `Type Mapping` nedir ve ne için kullanılır?
 ---
 
-Elasticsearch'te `type` benzer dökümanlar sınıfıdır. Örneğin `users` adında bir index'iniz
-var. Bu index içerisinde `user` diye bir `type` oluşturabilirsiniz. Ya da kullanıcı role'lerine 
+Elasticsearch'te `type` benzer dökümanlar sınıfıdır. Örneğin, `users` adında bir index'iniz
+varsa, bu index içerisinde `user` diye bir `type` oluşturabilirsiniz. Ya da kullanıcı role'lerine 
 göre `type`'lar oluşturabilirsiniz. `admin`, `user`, `staff` gibi. 
 
-Elasticsearch `mapping` kavramı daha önceden de belirttiğim üzere verinin yapısıdır. 
-Veritabanı şeması gibi düşünün. Verilerinizin hangi alanlardan oluştuğunu ve bu 
+Elasticsearch'te `mapping` kavramı, daha önceden de belirttiğim üzere verinin yapısıyla ilgilidir. 
+Veritabanı şeması gibi düşünebilirsiniz. Mappingler, verilerinizin hangi alanlardan oluştuğunu, bu 
 alanların tiplerinin ve özelliklerinin neler olduğunu belirtirler. Hangi alanların `index`e 
-alınacağı ya da hangi alanların Lucene'de tutulacağını belirler. 
+alınacağını yada hangi alanların Lucene'de tutulacağını belirler. 
 
 Elasticsearch daha önceden belirttiğimiz üzere Lucene tabanlıdır. Peki Lucene 
-Elasticsearch üzerinden gönderdiğimiz dökümanları nasıl görür ve nasıl saklar. 
+Elasticsearch üzerinden gönderdiğimiz dökümanları nasıl görür ve nasıl saklar? 
 
 Lucene'de bir döküman basit `field-value` (`alan-değer`) çiftlerini içerir. Bir alanın en az 
 bir değeri ya da birden fazla değeri olmalıdır. Bazen, tek bir `string` değer analiz 
@@ -40,7 +40,7 @@ değeri bazı analizler sonunda aşağıdak gibi
 }
 ```
 
-bir hal almış olabilir. Lucene değerin `string` ya da sayı ya da tarih formatında olmasını 
+bir hal almış olabilir. Lucene, değerin `string`, sayı yada tarih formatında olmasını 
 önemsemez. Tüm değerler `opaque bytes` olarak kabul edilir. 
 
 Lucene'de biz bir dökümanı `index`lediğimizde her bir alan (field) için değerler (values) ilgili 
@@ -55,17 +55,17 @@ kendi yapıları (mapping) vardır. Lucene tarafında bu veriler her bir doküma
 `meta data`sında `_type` diye bir alanında tutulur. Biz özel bir type'a göre bir arama 
 yaptığımızda Lucene tarafında `_type` alanında bir filtreleme yapar.
 
-Lucene'de aynı zamanda `mapping` diye bir kavramda yoktur. `Mapping`ler Elasticsearch'ün 
+Lucene'de aynı zamanda `mapping` diye bir kavram da yoktur. `Mapping`ler Elasticsearch'ün 
 karışık JSON dökümanlarını Lucene'in beklediği bir yapıya sokmak için kullandığı bir ara
 katmandır. 
 
 Burada dikkat edilmesi gereken konu şudur. Biz Elasticsearch'de verileri `type`lara ayırdık 
-gibi düşünsekte temelde o veriler Lucene'de aynı yerde tutulmaktadır. Bu da aynı index
-içerisinde aynı alan (field) adı ile farklı türde ya da farklı analiz edilmiş veriler tutmak 
-ileride başımızı ağrıtabilir. 
+gibi düşünsek de temelde o veriler Lucene'de aynı yerde tutulmaktadır. Bu da aynı index
+içerisinde aynı alan (field) adı ile farklı türde yada farklı analiz edilmiş veriler tutmak anlamına 
+gelir ki bu durum ileride başımızı ağrıtabilir. 
 
 Burana çıkacak sorunları [azaltmak](https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping.html#_avoiding_type_gotchas) 
-için bu tür verileri farklı alan isimleri ile ya da farklı indexlerde tanımlayarak sorunları 
+için bu tür verileri farklı alan isimleri ile yada farklı indexlerde tanımlayarak sorunları 
 çözebilirsiniz. 
 
 Örneğin, kullanıcı ve şirket bilgileri tuttuğunuz bir Elasticsearch node'unuz olsun. Burada 
@@ -102,10 +102,10 @@ POST /core/company/_mapping
 
 Gördüğünüz gibi `name` ve `id` alanları aynı. Eğer index'imiz bu şekilde olacaksa bir sorun ile 
 karşılaşmayabilirsiniz. Ancak ileride şirket isimleri için bir analiz işlemi uygulayarak aramalarda
-data doğru sonuç vermesini isteyebilirsiniz. Bu durumda bir `type`da bir analiz işlemi çalışırken 
+datanın doğru sonucu vermesini isteyebilirsiniz. Bu durumda bir `type`'da bir analiz işlemi çalışırken 
 diğerinde başka bir analiz işlemi çalışacaktır. Aramalarda bir karmaşa oluşacaktır. Bu iki `type`ı
 ayrı index'ler olarak ayırmak daha mantıklı olacaktır. Ya da name alanlarını `user_name` ve 
-`company_name` olarak değiştirmekte bir çözüm olacaktır. Böylelikle filtreleme yaparken 
+`company_name` olarak değiştirmek de bir çözüm olacaktır. Böylelikle filtreleme yaparken 
 bu alanlarda karışıklık olmayacaktır. 
 
 #### Kaynakça 
