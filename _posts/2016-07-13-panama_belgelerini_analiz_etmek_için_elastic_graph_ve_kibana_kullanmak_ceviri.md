@@ -179,4 +179,4 @@ daha derin bakıyor olacağız.
 Bizi takip edin...
 
 
-Kaynak : https://www.elastic.co/blog/using-elastic-graph-and-kibana-to-analyze-panama-papers
+Kaynak : [https://www.elastic.co/blog/using-elastic-graph-and-kibana-to-analyze-panama-papers](https://www.elastic.co/blog/using-elastic-graph-and-kibana-to-analyze-panama-papers)
