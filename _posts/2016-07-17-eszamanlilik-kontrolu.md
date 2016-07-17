@@ -1,6 +1,6 @@
 ---
 layout: post
-title: İyimser Eşzamanlılık Kontrolü
+title: Eşzamanlılık Kontrolü
 categories:
 - blog
 summary: Elasticsearch dağıtık bir yapıya sahiptir ve bu dağıtık yapıda eşzamanlı işlemlerimizde verilerimizi kaybetmeden nasıl sürümleriz ve sürümleri yönetiriz. 
