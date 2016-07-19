@@ -6,34 +6,34 @@ categories:
 summary: Elasticsearch'ün eklentisi Graph ile Panama Belgelerini inceleyeceğiz ve Graph Kibana eklentisi ile de bu verileri görselleştireceğiz.
 ---
 
-Yeni Elastic Graph'ın yetenekleri veri içerisindeki bağlantıları analiz etmemizi 
-sağlar. Eğer işiniz Panama Belgelerindeki yabancı ülkelerin içinden çıkılmayacak 
-finansal düzenlemelerini veya revaçtaki bir e-ticaret sitesinin yüksek seviye 
-tıklama davranışlarını takip etmek ise, Graph teknolojisi bu ilişkileri size 
-sağlamakta yardımcı olabilir.
+Yeni Elastic Graph'ın yetenekleri veri içerisindeki bağlantıları daha kolay 
+analiz etmemizi sağlar. Eğer işiniz Panama Belgelerindeki yabancı ülkelerin 
+içinden çıkılmayacak finansal düzenlemelerini veya revaçtaki bir e-ticaret 
+sitesinin yüksek seviye tıklama davranışlarını takip etmek ise, Graph 
+teknolojisi bu ilişkileri size sağlamakta yardımcı olabilir.
 
 Graph'ın yetenekleri Elastic Stack için ticari X-Pack eklentisinin bir parçası 
-olarak gelmektedir ve bir Kibana uygulaması ve yeni bir Elasticsearch API 
-uçnoktası içermektedir. İlk Graph yazımızca biz API'ın ve Kibana arayüzünün 
+olarak gelmektedir. Paket bir Kibana uygulaması ve yeni bir Elasticsearch API 
+uçnoktası içermektedir. Bu ilk Graph yazımızca biz API'ın ve Kibana arayüzünün 
 bize ne sundukları ile ilgili kısa bir göz atacağız.
 
 ### Forensic Analiz: Panama Papers
 
-Off-shore hukuk firması Mossack Fonseca tarafından 
+Panama Belgeleri, Off-shore hukuk firması Mossack Fonseca tarafından 
 [Mali ve Yasal kayıtların yayınlanması](https://panamapapers.icij.org/) 2016'nın
-en çok tepki toplayan haberlerisinden birisidir. Kayıtlar bir çok politikacı, 
-kraliyet üyesi, zenginler ve onların ailelerinin deniz aşırı vergi rejimleri 
-için kurulan petrol şirketlerini açığa çıkardı. Gazeteciler ve finans 
-kuruluşları dikkatli bir şekilde bu veriler üzerinde odaklandılar ama 
-bağlantıları ortaya çıkarmak zor olabilir ve de zaman alabilir ama Kibana Graph 
-uygulaması bunu herkes için kolay hale getirdi:
+en çok tepki toplayan haberlerinden birisidir. Kayıtlar bir çok politikacı, 
+kraliyet üyesi, zengin ve onların ailelerinin deniz aşırı vergi rejimlerini 
+kullanmak için kurulan petrol şirketlerini açığa çıkardı. Gazeteciler ve finans 
+kuruluşları dikkatli bir şekilde bu veriler üzerinde odaklandılar(çalıştılar) 
+ama bağlantıları ortaya çıkarmak gerçekten çok zor oldu ve de zaman aldı ama 
+Kibana Graph uygulaması bunu herkes için kolay hale getirdi:
 
 ![Panama Paper Graph Dashboard Relationships](https://www.elastic.co/assets/blt0f07da9e0ac0dc6b/panama-papers-graph-dashboard-relationships.jpg)
 
 Yukarıda Viladimir Putin'in yakın arkadaşı 
 [Sergei Roldugin](http://www.theguardian.com/news/2016/apr/03/panama-papers-money-hidden-offshore)'in, 
-şirketler ve bireysel kişiler ile ilişkilerini görüyorsunuz. Bu resim bir kaç 
-basit adım ile oluşturulabilir:
+şirketler ve bireysel kişiler ile ilişkilerini görüyorsunuz. Bu resim Graph ile 
+bir kaç basit adım ile oluşturulabilir:
 
 ### Veri kaynağını seçmek
 
@@ -62,7 +62,7 @@ address) tekil bir ID vermeyi denediler. Ne yazık ki, insan isimleri ve adresle
 eşleşmeler için uygun olmayabilir - gazeteciler 3 dökümanda ilişkili halde 
 bulunan 12180773 kimlik numaralı Person varlığı belirlediler ama bu kişi ile 
 benzer isimde iki kişi daha olduğunu rahatça görebiliriz ve bu kişiler farklı 
-bir kimliğe sahipler. Gelecekteki yazımızda, otomatik varlık çözümleme 
+bir kimliğe sahipler. Gelecekteki bir yazımızda da, otomatik varlık çözümleme 
 (Automated Entity Resolution) için Graph API'ın kullanımı hakkında konuşacağız. 
 Şimdilik bunu elle (gruplama aracı ile) düzenleyelim.
 
