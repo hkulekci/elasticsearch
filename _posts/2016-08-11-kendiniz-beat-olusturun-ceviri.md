@@ -469,3 +469,6 @@ nGram ile analiz edilmiş "filename" alanını kullanarak bir arama çalıştır
 ![](https://www.elastic.co/assets/blte53a76e132c239b6/query.png)
 
 Çalıştı! Tebrikler.
+
+
+_Kaynak :_ https://www.elastic.co/blog/build-your-own-beat
