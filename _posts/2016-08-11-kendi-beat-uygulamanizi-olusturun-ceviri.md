@@ -472,3 +472,8 @@ nGram ile analiz edilmiş "filename" alanını kullanarak bir arama çalıştır
 
 
 _Kaynak :_ [https://www.elastic.co/blog/build-your-own-beat](https://www.elastic.co/blog/build-your-own-beat)
+
+Not : Örnek oluşturabilecek diğer bir beat olarak 
+[filecountbeat](https://github.com/hkulekci/filecountbeat)'i de örnek 
+alabilirsiniz. Belirtilen dizindeki dosyaların ve klasörlerin sayılarını log 
+olarak tutan bir beat örneğidir. 
