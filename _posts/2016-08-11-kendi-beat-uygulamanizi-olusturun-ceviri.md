@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kendiniz Beat Oluşturun (Çeviri)
+title: Kendi Beat Uygulamanızı Oluşturun (Çeviri)
 categories:
 - blog
 summary: Elasticsearch Beat ile çeşitli yerlerden (network, file, ...) verileri kolayca okuyup elasticsearch ya da logstash arayüzlerine gönderebilirsiniz. Biz de kendimiz için bir beat'i nasıl oluştururuz onu göreceğiz.
