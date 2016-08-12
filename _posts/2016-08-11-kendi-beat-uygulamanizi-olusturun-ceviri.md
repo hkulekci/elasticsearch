@@ -471,4 +471,4 @@ nGram ile analiz edilmiş "filename" alanını kullanarak bir arama çalıştır
 Çalıştı! Tebrikler.
 
 
-_Kaynak :_ https://www.elastic.co/blog/build-your-own-beat
+_Kaynak :_ [https://www.elastic.co/blog/build-your-own-beat](https://www.elastic.co/blog/build-your-own-beat)
