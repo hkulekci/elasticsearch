@@ -15,14 +15,14 @@ kullanacağımıza kısaca bir göz atalım. "Ingest Node".
 yeni bir Elasticsearch node türüdür. 
 
 Her bir görev bir `processor` olarak temsil edilir. Her bir `processor` bir `pipeline`lar 
-ile oluşur. (Buradaki terimlerin çevirilerini yapmadım ancak `processor`'ü veri işleyen 
-bir yapı, `pipeline`'ı ise veri işleme hattı olarak düşünebilirsiniz.)
+dizisinden ile oluşur. (Buradaki terimlerin çevirilerini yapmadım ancak `processor`'ü 
+veri işleyen bir yapı, `pipeline`'ı ise veri işleme hattı olarak düşünebilirsiniz.)
 
-Şu anda hali hazırda dahili olarak 20 tane `processor` bulunmaktadır. Örneğin: 
-grok, date, gsub, lowercase/uppercase, remove ve rename. Tma listeye 
-[şu adresten](https://www.elastic.co/guide/en/elasticsearch/reference/master/ingest-processors.html)(döküman ingilizcedir) ulaşabilirsiniz.
+Şu anda hali hazırda Elasticsearch içerisinde 20 tane `processor` bulunmaktadır. 
+Örneğin: grok, date, gsub, lowercase/uppercase, remove ve rename. Tam listeye 
+[şu adresten](https://www.elastic.co/guide/en/elasticsearch/reference/master/ingest-processors.html)(adres içeriği ingilizcedir) ulaşabilirsiniz.
 
-Bunun yanında `ingest` için ayrıca 3 tane eklenti bulunmaktadır:
+Bunun yanında `ingest` özelliği için ayrıca 3 tane eklenti daha bulunmaktadır:
 
  - [Ingest Attachment](https://www.elastic.co/guide/en/elasticsearch/plugins/master/ingest-attachment.html) : Powerpoint, Excel Spreadsheets, ve PDF gibi ikili 
  kodlanmış dökümanları metin ve üstveri(metadata) haline getirir. 
@@ -33,7 +33,7 @@ Bunun yanında `ingest` için ayrıca 3 tane eklenti bulunmaktadır:
  
 ### Ingest Pipeline Oluşturma ve Kullanma
 
-`_ingest` arayüzü ile kolayce yeni bir ingest pipeline oluşturabilirsiniz. 
+`_ingest` arayüzü ile kolayca yeni bir "ingest pipeline" oluşturabilirsiniz. 
 
 ```
 PUT _ingest/pipeline/rename_hostname
@@ -50,14 +50,14 @@ PUT _ingest/pipeline/rename_hostname
 }
 ```
 
-Bu örnekte `rename_hostname` adında bir pipeline oluşturduk ve bu sadece 
-`hostname` alanını alıp adını değiştirip `host` olarak yazıyor. Eğer `hostname`
-yok ise `processor` işlemine hata vermeden devam ediyor.
+Bu örnekte `rename_hostname` adında bir "pipeline" oluşturduk ve bu sadece 
+`hostname` alanını alıp adını değiştirip `host` olarak geri yazıyor. Eğer `hostname`
+yok ise `processor` işlemine hata vermeden devam ediyor. 
 
-Pipeline'ı kullanmak için çeşitli yollar mevcut. 
+"Pipeline"ı kullanmak için çeşitli yollar mevcut. 
 
 Direk Elasticsearch API üzeriden kullanırken, `pipeline` parametresini url parametresi
-olarak göndermeniz gerekir. Örneğin :
+olarak göndermeniz yeterlidir. Örneğin :
 
 ```
 POST server/values/?pipeline=rename_hostname
@@ -66,8 +66,7 @@ POST server/values/?pipeline=rename_hostname
 }
 ```
 
-Logstash ile kullanırken çıktı ayarlamaları arasına `pipeline` parametresini 
-eklemelisiniz:
+Logstash ile kullanırken çıktı ayarlamaları arasına `pipeline` parametresini eklemelisiniz:
 
 ```
 output {
@@ -95,7 +94,7 @@ output.elasticsearch:
 ### Simulasyon 
 
 Yeni bir pipeline oluşturduğunuzda, gerçek veri üzerinde kullanmadan önce  test 
-edebilmek ve bir hata fırlatıp fırlatmayacağını araştırmak  gerçekten çok önemlidir.
+edebilmek ve bir hata fırlatıp fırlatmayacağını araştırmak gerçekten çok önemlidir.
 
 Bunun için bir [Simulate API](https://www.elastic.co/guide/en/elasticsearch/reference/master/simulate-pipeline-api.html) mevcuttur:
 
@@ -112,7 +111,7 @@ POST _ingest/pipeline/rename_hostname/_simulate
 }
 ```
 
-Sunçlar bize alanın başarılı bir şekilde değiştiğini gösterecektir:
+Sonuçlar bize alanın başarılı bir şekilde değiştiğini gösterecektir:
 
 ```
        [...]
@@ -132,11 +131,11 @@ Bu "[Combined Log Format](http://httpd.apache.org/docs/current/mod/mod_log_confi
 212.87.37.154 - - [12/Sep/2016:16:21:15 +0000] "GET /favicon.ico HTTP/1.1" 200 3638 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
 ```
 
-Gördüğünüz gibi birkaç parça bilgiden oluşam bir metin: IP adres, zaman damgası, 
-kullanıcı aracısı ve daha fazlası. Hızlı bir arama ve görselleştirme sunmak için verimizi
-parçalara ayırıp Elasticsearch'de kendi alanları içerisine koyacağız. İsteğin nerden
-geldiğini bilmemiz de gerçekten çok yararlı olurdu. Bunları hepsini aşağıkdaki 
-pipeline ile yapabiliriz.
+Gördüğünüz gibi birkaç parça bilgiden oluşan bir metin: IP adres, zaman damgası, 
+kullanıcı aracısı(user agent) ve daha fazlası. Hızlı bir arama ve görselleştirme sunmak 
+için verimizi parçalara ayırıp Elasticsearch'de kendi alanları içerisine koyacağız. İsteğin 
+nereden geldiğini bilmemiz de gerçekten çok yararlı olurdu. Bunları hepsini 
+aşağıdaki pipeline ile yapabiliriz.
 
 ```
 PUT _ingest/pipeline/access_log
@@ -168,15 +167,15 @@ PUT _ingest/pipeline/access_log
   ]
 }
 ```
-Örnek 4 `processor` içermektedir: 
+Bu örnek 4 `processor` içermektedir: 
 
  - `grok` regular expression ile metin halindeki günlük verisini işleyip kendi alanları olan yapısal bir hale getirmektedir. 
  - `date` dökümanın zaman dangası bilgisini tanımlamaktadır.
  - `geoip` istekte bulunanın IP adresini alıp iç bir veritabanına sorarak coğrafi konumunu belirlemektedir. 
  - `user-agent` kullanıcı aracı bilgisini metin olarak alıp yapısal bir hale getirmektedir. 
  
-Son iki `processor` Elasticsearch'e eklenti olarak gelmektedir. Onları öncelikli olarak 
-kurmalıyız:
+Son iki `processor` Elasticsearch'e eklenti olarak gelmektedir. Bu yüzden onları 
+öncelikli olarak kurmalıyız:
 
 ```
 bin/elasticsearch-plugin install ingest-geoip
@@ -260,3 +259,5 @@ Elasticsearch ve Kibana ile günlükleri görselleştireceğiz.
 
 > Note : Bazı terimlerin çevirisinde anlama sıkıntısı ortaya çıkaracağı için çevirisini 
 yapmadım. 
+
+Kaynak : [https://www.elastic.co/blog/new-way-to-ingest-part-1](https://www.elastic.co/blog/new-way-to-ingest-part-1)
