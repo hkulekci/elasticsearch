@@ -1,4 +1,10 @@
-### Elasticsearch ve Kibana'nın Beta Sürümleri için Docker İmajlarına Giriş
+---
+layout: post
+title: Elasticsearch ve Kibana'nın Beta Sürümleri için Docker İmajlarına Giriş (Çeviri)
+categories:
+- blog
+summary: Elasticsearch ve Kibana 5.0 sürümünü docker üzerinden nasıl çalıştırırız ve hızlı bir geliştirme ortamını nasıl kurarız.
+---
 
 Elasticsearch ve Kibana için beta sürümleri için docker imajları burada! 5.0 sürümlerinin son sürümleri ve 
 ayrıca [x-pack eklentisinin](https://www.elastic.co/downloads/x-pack) de içinde gelecektir. İmajlar 
