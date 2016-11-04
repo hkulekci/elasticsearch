@@ -92,7 +92,7 @@ GET test/type/_search
 {
    "query": {
       "match": {
-         "text": "sar"
+         "text": "şarkı"
       }
    },
     "highlight": {
@@ -104,6 +104,8 @@ GET test/type/_search
     }
 }
 ```
+
+Sorgu sonucu olarak aşağıdaki gibi bir cevap alınacaktır:
 
 ```
 {
