@@ -6,7 +6,7 @@ categories:
 summary: Arama sonuçlarınızda aramalarda eşleşen sonuçları vurgulamak için Elasticsearch hali hazırda bir özellik sunmaktadır. Bu yazıda bu özelliğin nasıl çalıştığını ve en efektif yöntem nedir öğreneceğiz.
 ---
 
-Bir ya da birden fazla alanda sonuçlardaki metinleri vurgulamak için kullanılan özelliktir. Lucene `highlighter`, `fast-vector-highlighter` veya `postings-highlighter` uyarlamalarını kullanmaktadır. Aşağıda bir arama örneğini bulabilirsiniz: 
+Bir ya da birden fazla alanda arama sonuçlardaki metinleri vurgulamak için kullanılan özelliktir. Bunun için Elasticsearch arka planda Lucene `highlighter`, `fast-vector-highlighter` veya `postings-highlighter` kullanmaktadır. Daha iyi anlamanız için örneğin google.com üzeride bir arama yaptığınızda eşleşen kelimelerin arama sonuçlarında koyu renkli geldiğini görebilirsiniz. Elasticsearch Highlight özelliği bunu sağlamaktadır. Aşağıda bir arama örneğini bulabilirsiniz: 
 
 ```
 {
@@ -19,15 +19,15 @@ Bir ya da birden fazla alanda sonuçlardaki metinleri vurgulamak için kullanıl
 }
 ```
 
-Yukarıdaki örnekte, `content` alanı her bir arama için vurgulanacak alandır. `highlight` parametresi içerisinde çağrılan herhangi başka bir alan da olabilir. Alan isimleri joker semboller ile de belirtilebilir. Örneğin `comment_*` ile `comment_` ile başlayan alanlar seçilmiş olacaktır. 
+Yukarıdaki örnekte, `content` alanı her bir arama için vurgulama yapılacak alandır. `highlight` parametresi içerisinde belirttiğiniz taktirde bu herhangi başka bir alan da olabilir. Alan isimleri joker semboller ile de belirtilebilir. Örneğin `comment_*` ile `comment_` ile başlayan alanlar seçilmiş olacaktır. İstediğini kadar alanda vurgulama işlemi yapabilirsiniz. Ancak dikkat etmeniz gereken şey vurgulama yapma türünüze göre seçtiğiniz alanlarda doğru şekilde vurgulama yapabilirsiniz.
 
 ### Plain Highlighter
 
-Varsayılan seçenek olarak `plain` vurgulama türü kullanılmaktadır ve Lucene Highlighter kullanılır. Terimlerin yerlerini saptamak ve biraz yavaşlatacaktır. 
+Varsayılan seçenek olarak `plain` vurgulama türü kullanılmaktadır ve Lucene Highlighter kullanılır. Diğer tür vurgulama algoritmalarına göre daha yavaş çalışır. Hiç bir konfigürasyon yapmazsanız bu tür vurgulama kullanılacaktır. 
 
 ### Posting Highlighter
 
-Eğer mapping oluşturulurken arama yapmak istediğiniz alanların `index_options` parametresine `offsets` değerini verdiğinizde varsayılanın yerine bu tip vurgulama yöntemi kullanılacaktır. Daha hızlıdır çünkü metni tekrar analiz etmeniz gerekmez ve büyük dökümanlar için daha performanslıdır. `term_vectors`'a göre daha az alan(disk alanı) harcar. doğal dillerde gerçekten iyidir ancak html içeren metinlerde o kadar iyi değildir.
+Eğer mapping oluşturulurken arama yapmak istediğiniz alanların `index_options` parametresine `offsets` değerini verirseniz varsayılanın yerine `Posting` tipi vurgulama yöntemi kullanılacaktır. `Plain` olana göre daha hızlıdır. Çünkü metni vurgulama işlemi sırasında tekrar analiz etmeniz gerekmez ve büyük dökümanlar için daha performanslıdır. Bir sonraki vurgulama tipi olan `term_vector`'a göre daha az alan(disk alanı) harcar. Doğal dillerde gerçekten iyidir ancak html içeren metinlerde o kadar da iyi değildir.
 
 Mapping ayarlarını yaparken aşağıdaki gibi bir konfigürasyon yapabilirsiniz:
 
@@ -41,7 +41,7 @@ Mapping ayarlarını yaparken aşağıdaki gibi bir konfigürasyon yapabilirsini
 
 ### Fast Vector Highlighter
 
-Eğer mapping oluşuturulurken arama yapmak istediğiniz alanların `term_vector` parametresine `with_positions_offsets` verdiğinizde varsayılanın yerine bu Fast Vector vurgulama yöntemi kullanılmaktadır. Özellikle büyük (> 1MB) alanlar için daha hızlıdır. Index boyutunu diğerlerine göre daha fazla büyütecektir. `matched_fields` özelliği ile birden fazla alandaki eşleşen sonuçları birleştirebilmektedir. Aşağıda bir `content` alanı için Fast Vector vurgulama yöntemini uygulayalım:
+Eğer mapping oluşturulurken arama yapmak istediğiniz alanların `term_vector` parametresine `with_positions_offsets` verirseniz varsayılanın yerine `Fast Vector` vurgulama yöntemi kullanılmaktadır. Özellikle büyük (> 1MB) alanlar için daha hızlıdır. Index boyutunu diğerlerine göre daha fazla büyütecektir. `matched_fields` özelliği ile birden fazla alandaki eşleşen sonuçları birleştirebilmektedir. Aşağıda bir `content` alanı için `Fast Vector` vurgulama yöntemini uygulayalım:
 
 ```
 {
