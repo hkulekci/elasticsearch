@@ -1,0 +1,27 @@
+#home {
+    min-height: 830px;
+}
+
+.navbar {
+    position:relative;
+    margin:0px auto;
+    padding: 3px;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: #70BA56;
+    float:left;
+    margin:5px 20px 5px 0px;
+    padding:3px;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.selected {
+    text-decoration: none;
+    color: #222222;
+    cursor: pointer;
+}
