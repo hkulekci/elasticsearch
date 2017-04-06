@@ -92,5 +92,5 @@ Bir sonraki yazımda bu konuya bir çözüm olarak Elasticsearch'ün sunduğu di
 
 ### Kaynaklar 
 
- - [https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-from-size.html]() 
- - [https://www.elastic.co/guide/en/elasticsearch/guide/master/pagination.html]()
+ - [https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-from-size.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-from-size.html) 
+ - [https://www.elastic.co/guide/en/elasticsearch/guide/master/pagination.html](https://www.elastic.co/guide/en/elasticsearch/guide/master/pagination.html)
