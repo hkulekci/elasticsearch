@@ -6,9 +6,7 @@ categories:
 summary: Elasticsearch üzerindeki verimiz ile sayfalama nasıl yaparız ne gibi sorunlar bizi bekliyor bir göz atacağız. Örnekler ile bu konuyu açıklamaya çalışacağız.
 ---
 
-Elasticsearch üzerinde hızlıca arama yapabileceğimizden, veri yapılarından, veri türlerinden, index düzenleme ve takma isimlerinden bolca bahsettik. Bu yazıda çektiğimiz verileri kullanıcıya sayfa sayfa kullanıcıya nasıl ulaştırırız, bunun için nasıl yöntemler var, ondan bahsetmeye çalışacağım.
-
-Verileri sorgulamak için çok fazlaca sorgu çeşitleri mevcut. Bu sorgular ve çeşitleri bu yazının kapsamında değil. Ama siz yazı içerisindeki sorgularda `query` özelliğini rahatça ekleyebilirsiniz. Ekstra özel durumlarda da zaten belirtiyor olacağım.
+Elasticsearch üzerinde hızlıca arama yapabileceğimizden, veri yapılarından, veri türlerinden, index düzenleme ve takma isimlerinden bolca bahsettik. Bu yazıda çektiğimiz verileri kullanıcıya sayfa sayfa kullanıcıya nasıl ulaştırırız, bunun için nasıl yöntemler var, ondan bahsetmeye çalışacağım. Konu biraz uzun olduğu için 3 kısımdan oluşan bir seri halinde yayınlayacağım.
 
 ### `from` ve `size`
 
