@@ -3,10 +3,12 @@ layout: post
 title: Elasticsearch'te Sayfalama Yapma (Scroll) - 2
 categories:
 - blog
-summary: Bir önceki yazımda `from` ve `size` özelliğinden bahsetmiştik. Bu yazımda daha farklı bir sayfalama yöntemi olan Scroll özelliğinden bahsedeceğim.
+summary: Bir önceki yazımda `from` ve `size` özelliğinden bahsetmiştim. Bu yazımda daha farklı bir sayfalama yöntemi olan Scroll özelliğinden bahsedeceğim.
 ---
 
-Bir önceki yazımda `from` ve `size` özelliğinden bahsetmiştik. Bu yazımda daha farklı bir sayfalama yöntemi olan Scroll özelliğinden bahsedeceğim. Scroll özelliği ise bize daha farklı bir sunuş imkanı sağlıyor. Ben Scroll özelliğini Twitter'ın arayüzleri olarak düşünüyorum. Herkes biliyordur, aşağı doğru kaydırdıkça kaldığımız yerden veriler gelmektedir. Örnek bir sorgu ile konuyu biraz inceleyelim. İlk olarak scroll kullanmak istediğimizi ve ne kadar süre bu sorguyu aklında tutması gerektiğini `?scroll=1m` sorgu parametresi ile gönderiyoruz.
+Bir önceki yazımda `from` ve `size` özelliğinden bahsetmiştim. Bu yazımda daha farklı bir sayfalama yöntemi olan Scroll özelliğinden bahsedeceğim. Scroll özelliği ise bize daha farklı bir sunuş imkanı sağlıyor. Ben Scroll özelliğini Twitter'ın arayüzleri olarak düşünüyorum. Herkes biliyordur, aşağı doğru kaydırdıkça kaldığımız yerden veriler gelmektedir.
+
+Örnek bir sorgu ile konuyu biraz inceleyelim. İlk olarak scroll kullanmak istediğimizi ve ne kadar süre bu sorguyu aklında tutması gerektiğini `?scroll=1m` sorgu parametresi ile gönderiyoruz.
 
 ```
 POST /myindex/_search?scroll=1m
@@ -83,11 +85,11 @@ Bu sorgu sonucu olarak yine aynı `scroll_id` bize geri dönecektir. Siz her sor
 }
 ```
 
-Scroll özelliğinde dikkat ettiysek istediğimiz sayfaya bir anda atlayıp gidemiyoruz. Bu özelliğin olmaması kaynak kullanımı açısından bize kazanç sağlamaktadır. Ne demiş büyüklerimiz "her seçim bir kaybediştir".
+Scroll özelliğinde dikkat ettiysek istediğimiz sayfaya bir anda atlayıp gidemiyoruz. Bu özelliğin olmaması kaynak kullanımı açısından bize kazanç sağlamaktadır. Burada hep aklıma şu söz gelir: "her seçim bir kaybediştir". Hız yönünden kazanırken ya da daha fazla veriye erişim imkanı kazanırken deneyim olarak daha farklı bir deneyimle karşı karşıya kalabiliyoruz. 
 
 Bir sonraki yazımda Scroll ile benzer bir yapıda ancak `stateless` bir yapısı olan `search_after` özelliğinden bahsedeceğim.
 
-### Kaynkalar 
+### Kaynaklar 
 
  - [https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-scroll.html]()
  - [https://www.elastic.co/guide/en/elasticsearch/guide/master/pagination.html]()
