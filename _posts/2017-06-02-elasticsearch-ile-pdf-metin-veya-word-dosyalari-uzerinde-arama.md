@@ -1,4 +1,12 @@
-## Elasticsearch ile PDF, Metin veya Word Dosyaları Üzerinde Arama
+---
+layout: post
+title: Elasticsearch ile PDF, Metin veya Word Dosyaları Üzerinde Arama
+categories:
+- blog
+summary: Bir proje kapsamında üerinde uğraştığımız PDF, Word ya da diğer metin türündeki dosyaları Elasticsearch üzerinde nasıl aranabilir hale getirdik nelerle karşılaştık kısaca bahsettim. Adım adım projeyi nasıl gerçek hayata getirdik düşündüklerim nelerdi onlara değindim.
+---
+
+## 
 
 Bir süre önce bir proje bünyesinde PDF, Metin veya Word dökümanları arama yapma ihtiyacı doğdu. Bu ihtiyaç üzerine bende konu hakkında biraz araştırmalar yaptım ve buradan da süreç içerisinde yaşadıklarımı adım adım paylaşmak istedim.
 
