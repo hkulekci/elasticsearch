@@ -6,7 +6,7 @@ categories:
 summary: Arama sonuçlarınızda aramalarda eşleşen sonuçları vurgulamak için Elasticsearch hali hazırda bir özellik sunmaktadır. Bu yazıda bu özelliğin nasıl çalıştığını ve en efektif yöntem nedir öğreneceğiz.
 ---
 
-Bir ya da birden fazla alanda arama sonuçlardaki metinleri vurgulamak için kullanılan özelliktir. Bunun için Elasticsearch arka planda Lucene `highlighter`, `fast-vector-highlighter` veya `postings-highlighter` kullanmaktadır. Daha iyi anlamanız için örneğin google.com üzeride bir arama yaptığınızda eşleşen kelimelerin arama sonuçlarında koyu renkli geldiğini görebilirsiniz. Elasticsearch Highlight özelliği bunu sağlamaktadır. Aşağıda bir arama örneğini bulabilirsiniz: 
+Bir ya da birden fazla alanda arama sonuçlardaki metinleri vurgulamak için kullanılan özelliktir. Bunun için Elasticsearch arka planda Lucene `highlighter`, `fast-vector-highlighter` veya `postings-highlighter` kullanmaktadır. Daha iyi anlamanız için örneğin google.com üzeride bir arama yaptığınızda eşleşen kelimelerin arama sonuçlarında koyu renkli geldiğini görebilirsiniz. Elasticsearch Highlight özelliği bunu yapabilmenizi sağlamaktadır. Bu özellik ile ilgili bir arama örneği oluşturalım: 
 
 ```
 {
@@ -23,7 +23,7 @@ Yukarıdaki örnekte, `content` alanı her bir arama için vurgulama yapılacak 
 
 ### Plain Highlighter
 
-Varsayılan seçenek olarak `plain` vurgulama türü kullanılmaktadır ve Lucene Highlighter kullanılır. Diğer tür vurgulama algoritmalarına göre daha yavaş çalışır. Hiç bir konfigürasyon yapmazsanız bu tür vurgulama kullanılacaktır. 
+Varsayılan seçenek olarak `plain` vurgulama türü kullanılmaktadır ve bu tür vurgulama tabanda Lucene Highlighter kullanılır. Diğer tür vurgulama algoritmalarına göre daha yavaş çalışır. Ekstra hiçbir konfigürasyon yapmazsanız bu tür vurgulama kullanılacaktır. 
 
 ### Posting Highlighter
 
