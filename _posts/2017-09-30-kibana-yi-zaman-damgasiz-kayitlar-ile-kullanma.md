@@ -10,7 +10,8 @@ Daha önceden sunumlarımda ve sohbetlerde bir çok kez şunu söylemiştim. Kib
 arayüzünde zaman damgası olan kayıtlar üzerinde görselleştirme yapıyoruz. Bu 
 konuda öncelikle beni dinleyenlerden özür dileyerek bu yazıma başlamak istiyorum.
 Bir arkadaşım ile kibana arayüzü hakkında sohbet ederken farkettik ki 
-olabiliyormuş. Kendisine de beni çok teşekkür ederim. 
+olabiliyormuş. Kendisine de bu konuda beni bilgilendirdiği için çok teşekkür 
+ederim. 
 
 Zaman damgası olmayan kayıtları da rahatlıkla bu arayüzden görselleştirebilirsiniz. 
 Nasıl mı? Çok basit. Kibana arayüzünde index'inizi tanımlarken bir işaret 
@@ -18,16 +19,18 @@ kutusundaki işareti kaldırarak.
 
 ![http://elasticsearch.kulekci.net/assets/img/kibana-index-contains-time-based-events-checkbox.png](http://elasticsearch.kulekci.net/assets/img/kibana-index-contains-time-based-events-checkbox.png)
 
-Arayüzde diğer herşey aynı şekilde ilerleyecektir. Ancak bu durumda şuna dikkat 
-etmenizi öneririm. Sıralama değişecektir. Kayıtlarınızı sıralaması zaman bazlı 
-olmadığından en son gelen kayıt en üst sırada olmayacaktır. Ayrıca üst başlık 
-satırındaki zamana göre verilerinizi kısıtlama ekranı da gelmeyecektir.
+Arayüzde bir kaç farklılık dışında diğer herşey aynı şekilde ilerleyecektir. 
+Ancak bu durumda şuna dikkat etmeniz gerekir. Verileriniz artık tarihe göre 
+sıralanmıyor. Kayıtlarınızı sıralaması zaman bazlı olmadığından en son gelen 
+kayıt en üst sırada olmayacaktır. Ayrıca üst başlık satırındaki zamana göre 
+verilerinizi kısıtlama ekranı da gelmeyecektir. Burada tarih alanınız varsa bu 
+kısıtlamayı kendiniz arama çubuğundan yapmalısınız.
 
 ![http://elasticsearch.kulekci.net/assets/img/kibana-time-range.png](http://elasticsearch.kulekci.net/assets/img/kibana-time-range.png)
 
-Eğer tarih bazlı olmayan şekilde index'i eklerseniz sıralamanız `_score`'a göre 
-eğer tarih bazlı eklerseniz bu durumda varsayılan sıralamanız seçtiğiniz tarih 
-alanına göre azalan olarak gelecektir. 
+Eğer tarih bazlı olmayan şekilde index'i eklerseniz varsayılan sıralamanız 
+`_score`'a göre eğer tarih bazlı eklerseniz bu durumda seçtiğiniz tarih 
+alanına göre azalan olarak gelecektir.
 
 Tarih bazlı kullanımlarda `Discover` ekranında varsayılan olarak tarih alanı 
 gelirken, tarih bazlı kullanmazsanız gelmeyecektir. Bunlar dışında gördüğüm 
