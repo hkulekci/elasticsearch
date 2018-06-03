@@ -60,7 +60,7 @@ Burada sorulacak soru aslında çok fazla. Java'da farklı türlerde Garbage Col
 
 #### Garbage Collector Ayarlamaları
 
-Yukarıda da bahsettiğimiz gibi `heap` bellek alanının dolduğunda ya da belirli aralıklarla temizlenmesi için gerekli bir araç olan Garbage Collector için ayarlamalar yapabiliriz. Örneğin, bazı kaynaklarda çok önerilmese de, `+UseG1GC` ile GC türünüzü daha yeni bir GC olan G1GC ile değiştirebilirsiniz. Ancak ES bazı hatalardan dolayı daha G1GC'i desteklemiyor. [*](https://docs.datastax.com/en/cassandra/3.0/cassandra/operations/opsTuneJVM.html#opsTuneJVM__choose-gc) [*](https://discuss.elastic.co/t/g1gc-in-production-with-regard-to-consistency/47561/3) [*](https://discuss.elastic.co/t/elasticsearch-appears-to-ignore-xx-useg1gc-in-jvm-options/96862)
+Yukarıda da bahsettiğimiz gibi `heap` bellek alanının dolduğunda ya da belirli aralıklarla temizlenmesi için gerekli bir araç olan Garbage Collector için ayarlamalar yapabiliriz. Örneğin, bazı kaynaklarda çok önerilmese de, `+UseG1GC` ile GC türünüzü daha yeni bir GC olan G1GC ile değiştirebilirsiniz. Ancak ES bazı hatalardan dolayı daha G1GC'i desteklemiyor. [?](https://docs.datastax.com/en/cassandra/3.0/cassandra/operations/opsTuneJVM.html#opsTuneJVM__choose-gc) [?](https://discuss.elastic.co/t/g1gc-in-production-with-regard-to-consistency/47561/3) [*](https://discuss.elastic.co/t/elasticsearch-appears-to-ignore-xx-useg1gc-in-jvm-options/96862)
 
 Diğer `CMSInitiatingOccupancyFraction` ayarı ile `heap` bellek doluluk oranına göre GC'nin çalışmasını sağlayan bir oran belirleyebilirsiniz. Java dünyasında ortalama %70-75 civarları ideal görülüyor. ES için varsayılan değer %75.
 
@@ -75,7 +75,7 @@ GC için varsayılan değerler aşağıdaki gibi:
 
 #### Heap Bellek Hata Ayarları
 
-Heap bellek yönetimi sırasında bazı hatalar oluşabilir. Bu hataları yakalamak ve bir yerlere kaydetmen için aşağıdaki jvm ayarlarını kullanabilirsiniz. `HeapDumpPath` ile bir dosya belirleyerek bu dosyaya hataları yazdırabilirsiniz.
+Heap bellek yönetimi sırasında bazı hatalar oluşabilir. Bu hataları yakalamak ve bir yerlere kaydetmen için aşağıdaki jvm ayarlarını kullanabilirsiniz. `HeapDumpPath` ile bir klasör belirleyerek hataları bu klasör içerisine yazdırabilirsiniz.
 
 ```
 # generate a heap dump when an allocation from the Java heap fails
