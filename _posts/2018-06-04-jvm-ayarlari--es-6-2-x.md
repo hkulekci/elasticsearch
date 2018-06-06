@@ -6,8 +6,6 @@ categories:
 summary: JVM ayarları için ne yapmak gerekir ve nasıl değiştirilir değinmeye çalıştık ve bu ayarlardan bazılarını daha detaylıca açıklamaya çalıştık.
 ---
 
-## 
-
 JVM ayarları sıklıkla değiştirilmese de geliştirme ortamından canlı ortama geçiş sırasında daha performanslı bir cluster için bazı değişiklikler yapılması gerekir. ES'in eski sürümlerinde bu ayarları verirken ES'i çalıştırma komutuna parametre olarak veriyorduk:
 
 ```
@@ -44,7 +42,7 @@ Tabiki varsayılan dosya bu kadar ayarlama içermiyor ben sadece kısa kesitler 
 
 #### JVM Heap Size
 
-Java uygulamasının yanı ES'ini başlangıçta ayıracağın bellek miktarını ve maksimum kullanabileceği bellek miktarını belirler. Bunun için aşağıdaki parametreleri `jvm.options` dosyasına yazabiliriz ya da var ise değiştirebiliriz.
+Java uygulamasının (ES'in) başlangıçta ayıracağı ve maksimum kullanabileceği bellek miktarını belirler. Bunun için aşağıdaki parametreleri `jvm.options` dosyasına yazabiliriz ya da var ise değiştirebiliriz.
 
 ```
 # Xms represents the initial size of total heap space
